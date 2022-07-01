@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@main
         with:
           repository: andresnboza/reloadAppScripts
-          path: ./reloadAppScripts
+          path: .
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
