@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.x']
+        python-version: '3'
     steps:
       - name: Check out repository code of ${{ github.repository }}
         uses: actions/checkout@v3
