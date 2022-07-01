@@ -19,5 +19,5 @@ jobs:
           cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls && cat Makefile
       - name: List files in scripts folder
         run: |
-          make save
+          python3 save2.py $$FILE_NAME $$MONGO_URI
       - run: echo "🍏 This job's status is ${{ job.status }}."
