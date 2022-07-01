@@ -3,20 +3,25 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '2.x', '3.x', 'pypy2.7', 'pypy3.7', 'pypy3.8' ]
     steps:
       - name: Check out repository code of ${{ github.repository }}
         uses: actions/checkout@v3
+      - name: Python ${{ matrix.python-version }} sample
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
       - name: Clone Scripts repository
         uses: actions/checkout@main
         with:
           repository: andresnboza/reloadAppScripts
           path: ./reloadAppScripts
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - name: List files in scripts folder
         run: |
-          cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls && cat Makefile
+          ls && cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls
       - name: List files in scripts folder
         run: |
           python3 save2.py $$FILE_NAME $$MONGO_URI
