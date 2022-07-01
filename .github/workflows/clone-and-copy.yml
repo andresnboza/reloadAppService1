@@ -26,6 +26,5 @@ jobs:
       - name: Execute the save
         run: |
           cd reloadAppScripts
-          echo ${{ secrets.FILE_NAME }}
-          echo ${{ secrets.MONGO_URI }}
+          python3 save2.py ${{ secrets.FILE_NAME }} ${{ secrets.MONGO_URI }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
