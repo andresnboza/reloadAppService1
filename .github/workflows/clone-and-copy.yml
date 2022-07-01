@@ -28,5 +28,4 @@ jobs:
           cd reloadAppScripts
           echo $FILE_NAME
           echo $MONGO_URI
-          python3 save2.py $FILE_NAME $MONGO_URI
       - run: echo "🍏 This job's status is ${{ job.status }}."
