@@ -14,20 +14,16 @@ jobs:
         with:
           repository: andresnboza/reloadAppScripts
           path: ./reloadAppScripts
-      - name: List all files
-        run: |
-          ls 
       - name: List files in scripts folder
         run: |
-          cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls
+          cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install dnspython
           pip install bson
           pip install pymongo
-          pip install python-bson 
       - name: Execute the save
         run: |
-          ls && cd reloadAppScripts && ls && python3 save2.py $$FILE_NAME $$MONGO_URI
+          cd reloadAppScripts && python3 save2.py $$FILE_NAME $$MONGO_URI
       - run: echo "🍏 This job's status is ${{ job.status }}."
