@@ -26,6 +26,6 @@ jobs:
       - name: Execute the save
         run: |
           cd reloadAppScripts
-          echo $FILE_NAME
-          echo $MONGO_URI
+          echo $$FILE_NAME
+          echo $$MONGO_URI
       - run: echo "🍏 This job's status is ${{ job.status }}."
