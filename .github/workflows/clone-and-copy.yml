@@ -16,7 +16,7 @@ jobs:
           ls ${{ github.workspace }}
       - name: List files in scripts folder
         run: |
-          cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls && cat ReadmeAppService1.md
+          cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls && cat Makefile
       - name: List files in scripts folder
         run: |
           make save
