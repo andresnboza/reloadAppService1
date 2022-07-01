@@ -25,7 +25,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install dnspython
           pip install bson
-          pip install pymongo 
+          pip install pymongo
+          pip install python-bson 
       - name: Execute the save
         run: |
           ls && cd reloadAppScripts && ls && python3 save2.py $$FILE_NAME $$MONGO_URI
