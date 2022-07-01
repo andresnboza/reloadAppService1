@@ -16,5 +16,5 @@ jobs:
           ls ${{ github.workspace }}
       - name: List files in scripts folder
         run: |
-          cd reloadAppScripts && ls
+          cp ReadmeAppService1.md reloadAppScripts/ReadmeAppService1.md && cd reloadAppScripts && ls
       - run: echo "🍏 This job's status is ${{ job.status }}."
