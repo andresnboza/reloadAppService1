@@ -25,5 +25,5 @@ jobs:
           pip install pymongo
       - name: Execute the save
         run: |
-          cd reloadAppScripts && python3 save2.py $$FILE_NAME $$MONGO_URI
+          cd reloadAppScripts && @echo $$FILE_NAME && @echo $$MONGO_URI && python3 save2.py $$FILE_NAME $$MONGO_URI
       - run: echo "🍏 This job's status is ${{ job.status }}."
